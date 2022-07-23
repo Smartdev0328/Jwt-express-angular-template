@@ -1,0 +1,26 @@
+<div class="cd-container pt-5">
+  <div class="card bg-light text-light">
+    <h3 class="text-center">Contact List</h3>
+    <div class="card-body">
+      <table class="table table-dark table-striped">
+        <thead>
+          <tr>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Subject</th>
+            <th>message</th>
+            <th>query</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let contact of contacts">
+            <td>{{contact.name}}</td>
+            <td>{{contact.email}}</td>
+            <td>{{contact.subject}}</td>
+            <td>{{contact.message}}</td>
+            <td>{{contact.query}}</td>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

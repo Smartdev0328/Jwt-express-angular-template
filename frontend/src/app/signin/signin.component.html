@@ -1,0 +1,24 @@
+<div class="cd-container pt-5">
+  <div class="card bg-light text-light">
+    <div class="card-body">
+    <h3 class="text-center">Sign In</h3>
+    <form (ngSubmit)="onSubmit(formsignin)" #formsignin="ngForm">
+        <div class="form-group">
+          <label for="username">Email</label>
+          <input class="form-control form-control-lg" id="email" name="email" ngModel>
+        </div>
+
+
+        <div class="form-group">
+          <label for="username">Password</label>
+          <input type="password" class="form-control form-control-lg" id="password" name="password" ngModel>
+        </div>
+
+
+        <button type="submit" class="btn btn-outline-success btn-block">Sign In</button>
+        <div class="mt-5 mb-5 text-center invalid-feedback d-block" *ngIf="message_error!=''">{{message_error}}</div>
+        <div class="mt-5 text-center"><a [routerLink]="['/signup']">Do you not have an account? Sign up!</a></div>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,30 @@
+{
+  "name": "jwt",
+  "version": "1.0.0",
+  "description": "jwt auth with mysql and sequialize",
+  "main": "server.js",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.3.0",
+    "mysql2": "^1.6.4",
+    "sequelize": "^4.41.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node backend/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Nodejs",
+    "Express",
+    "JWT",
+    "Sequialize",
+    "MySQL",
+    "Authentication"
+  ],
+  "author": "ioo",
+  "license": "ISC"
+}

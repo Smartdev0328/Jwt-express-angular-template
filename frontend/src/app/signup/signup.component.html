@@ -1,0 +1,97 @@
+<div class="cd-container pt-5">
+  <div class="card bg-light text-light">
+    <h3 class="text-center">Sign Up</h3>
+    <div class="card-body">
+      <form [formGroup]="signupForm" (ngSubmit)="onSubmit();">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input class="form-control form-control-lg" type="text" id="name" formControlName="name">
+          <div *ngIf="signupForm.controls.name.invalid && signupForm.controls.name.touched">
+            <!-- <div *ngFor="let error of signupForm.controls.name.errors | errorKey" class="invalid-feedback d-block">
+        {{error}}
+      </div> -->
+            <div *ngIf="signupForm.controls.name.errors.required" class="invalid-feedback d-block">
+              The Name field is <strong>required</strong>.
+            </div>
+            <div *ngIf="signupForm.controls.name.errors.maxlength || signupForm.controls.name.errors.minlength"
+              class="invalid-feedback d-block">
+              The Name field must be between 5 and 50 characters.
+            </div>
+
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input class="form-control form-control-lg" id="email" formControlName="email">
+          <div *ngIf="signupForm.controls.email.invalid && signupForm.controls.email.touched">
+            <div *ngIf="signupForm.controls.email.errors.required" class="invalid-feedback d-block">
+              The Email field is <strong>required</strong>.
+            </div>
+            <div *ngIf="signupForm.controls.email.errors.email" class="invalid-feedback d-block">
+              The Email field is <strong>invalid</strong>.
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" class="form-control form-control-lg" id="password" formControlName="password">
+          <div *ngIf="signupForm.controls.password.invalid && signupForm.controls.password.touched">
+            <div *ngIf="signupForm.controls.password.errors.required" class="invalid-feedback d-block">
+              The Password field is <strong>required</strong>.
+            </div>
+
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="repeat-password">Repeat-password</label>
+          <input type="password" class="form-control form-control-lg" id="password1" formControlName="repeat_password">
+          <div *ngIf="signupForm.controls.password.value !=''">
+            <div *ngIf="!signupForm.controls.repeat_password.valid" class="invalid-feedback d-block">
+              the passwords don't match!
+            </div>
+
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col-md-6">
+            <label for="dob">Date of Birth</label>
+            <div class="md-form md-outline input-with-post-icon datepicker">
+              <input placeholder="Select date" type="date" id="dob" class="form-control" formControlName="dob">
+            </div>
+            <div *ngIf="signupForm.controls.dob.invalid && signupForm.controls.dob.touched">
+              <div *ngIf="signupForm.controls.dob.errors.required" class="invalid-feedback d-block">
+                The Date of Birth field is <strong>required</strong>.
+              </div>
+              <div *ngIf="signupForm.controls.dob.errors.dob" class="invalid-feedback d-block">
+                The Date of field is <strong>invalid</strong>.
+              </div>
+            </div>
+          </div>
+          <div class="form-group col-md-6">
+            <div class="form-group">
+              <label for="gender">Gender</label>
+              <select class="form-control" id="gender" formControlName="gender">
+                <option class="test-option" value="0">male</option>
+                <option class="test-option" value="1">female</option>
+              </select>
+            </div>
+            <div *ngIf="signupForm.controls.gender.invalid && signupForm.controls.gender.touched">
+              <div *ngIf="signupForm.controls.gender.errors.required" class="invalid-feedback d-block">
+                The Gender field is <strong>required</strong>.
+              </div>
+              <div *ngIf="signupForm.controls.gender.errors.email" class="invalid-feedback d-block">
+                The Gender field is <strong>invalid</strong>.
+              </div>
+            </div>
+          </div>
+        </div>
+        <br>
+        <button type="submit" class="btn btn-outline-success btn-block ">Sign Up</button>
+        <div class="mt-5 mb-5 text-center invalid-feedback d-block" *ngIf="message_error!=''">{{message_error}}</div>
+        <div class="mt-5 text-center"><a [routerLink]="['/signin']">Do you already have an account? Log in!</a></div>
+      </form>
+    </div>
+
+  </div>
+</div>

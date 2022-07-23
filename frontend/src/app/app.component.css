@@ -1,0 +1,14 @@
+
+.navbar{
+    margin:0;
+    width:100vw;
+    height:60px;
+}
+
+.main-page {
+    background-image: url('../homeImage.jpg');
+    height: calc(100vh - 60px);
+    width: 100vw;
+    background-position: center;
+    background-size: cover;
+}

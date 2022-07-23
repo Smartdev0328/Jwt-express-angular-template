@@ -1,0 +1,53 @@
+<div class="cd-container pt-5">
+  <div class="card bg-light text-light">
+    <h3 class="text-center">Contact Us</h3>
+    <div class="card-body">
+      <form [formGroup]="signupForm" (ngSubmit)="onSubmit();">
+        <div class="row">
+          <div class="form-group col-md-6">
+            <label for="name">Name</label>
+            <input class="form-control form-control-lg" type="text" id="name" formControlName="name">
+            <div *ngIf="signupForm.controls.name.invalid && signupForm.controls.name.touched">
+              <div *ngIf="signupForm.controls.name.errors.required" class="invalid-feedback d-block">
+                The Name field is <strong>required</strong>.
+              </div>
+              <div *ngIf="signupForm.controls.name.errors.maxlength || signupForm.controls.name.errors.minlength"
+                class="invalid-feedback d-block">
+                The Name field must be between 5 and 50 characters.
+              </div>
+
+            </div>
+          </div>
+          <div class="form-group col-md-6">
+            <label for="email">Email</label>
+            <input class="form-control form-control-lg" id="email" formControlName="email">
+            <div *ngIf="signupForm.controls.email.invalid && signupForm.controls.email.touched">
+              <div *ngIf="signupForm.controls.email.errors.required" class="invalid-feedback d-block">
+                The Email field is <strong>required</strong>.
+              </div>
+              <div *ngIf="signupForm.controls.email.errors.email" class="invalid-feedback d-block">
+                The Email field is <strong>invalid</strong>.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="subject">Subject</label>
+          <input class="form-control form-control-lg" id="subject" formControlName="subject">
+        </div>
+        <div class="form-group purple-border">
+          <label for="exampleFormControlTextarea4">Message</label>
+          <textarea class="form-control" id="message" formControlName="message" rows="3"></textarea>
+        </div>
+        <div class="form-group purple-border">
+          <label for="exampleFormControlTextarea4">query</label>
+          <textarea class="form-control" id="query" formControlName="query" rows="3"></textarea>
+        </div>
+        <br>
+        <button type="submit" class="btn btn-outline-primary btn-block">Submit!</button>
+        <div class="mt-5 mb-5 text-center invalid-feedback d-block" *ngIf="message_error!=''">{{message_error}}</div>
+      </form>
+    </div>
+
+  </div>
+</div>
